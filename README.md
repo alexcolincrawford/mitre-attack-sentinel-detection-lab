@@ -12,7 +12,6 @@ Using VMware, a local isolated network hosts three VMs: CLIENT01 (Windows 11), D
 Note: CLIENT01 is currently onboarded to the pipeline. DC01 onboarding is **in progress** and will extend coverage to domain-level telemetry (e.g. Kerberos service-ticket events for Kerberoasting detection).
 
 This is depicted in the below diagram.
-
 ![SOC Lab Architecture](architecture/soc_lab_architecture_local_to_sentinel.svg)
 
 ## Detection coverage
