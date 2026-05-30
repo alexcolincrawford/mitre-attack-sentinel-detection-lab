@@ -7,6 +7,7 @@ detected with custom KQL analytics rules in Microsoft Sentinel, mapped to MITRE 
 
 ## Architecture
 
+![SOC Lab Architecture](architecture/soc_lab_architecture_local_to_sentinel.svg)
 
 ## Detection coverage
 
