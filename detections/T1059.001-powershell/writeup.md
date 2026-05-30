@@ -4,7 +4,6 @@
 **ATT&CK:** [T1059.001](https://attack.mitre.org/techniques/T1059/001/)
 **Status:** ✅ Detected
 
- 
 ## Summary
  
 PowerShell is one of the most heavily abused execution mechanisms in real intrusions.
