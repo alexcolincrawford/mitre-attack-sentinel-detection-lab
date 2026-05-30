@@ -7,6 +7,12 @@ detected with custom KQL analytics rules in Microsoft Sentinel, mapped to MITRE 
 
 ## Architecture
 
+Using VMware, a local isolated network hosts three VMs: CLIENT01 (Windows 11), DC01 (Windows Server 2022 configured as a Domain Controller), and a Kali Linux attacker. Both Windows hosts run Sysmon with the SwiftOnSecurity configuration. Azure Arc connects the two Windows hosts to Azure, where the Azure Monitor Agent (AMA) is deployed to each. Data Collection Rules (DCRs) define which logs the agent collects: the Sysmon Operational log and the Windows Security log. These are forwarded to a Log Analytics Workspace (LAW), where they are stored. Microsoft Sentinel runs on top of the workspace (managed through the Microsoft Defender portal), where KQL-based analytics rules detect malicious activity and raise incidents.
+
+Note: CLIENT01 is currently onboarded to the pipeline. DC01 onboarding is **in progress** and will extend coverage to domain-level telemetry (e.g. Kerberos service-ticket events for Kerberoasting detection).
+
+This is depicted in the below diagram.
+
 ![SOC Lab Architecture](architecture/soc_lab_architecture_local_to_sentinel.svg)
 
 ## Detection coverage
