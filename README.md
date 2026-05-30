@@ -13,7 +13,7 @@ detected with custom KQL analytics rules in Microsoft Sentinel, mapped to MITRE 
 ## Detections
 | Technique | Tactic | Status |
 |-----------|--------|--------|
-| T1059.001 PowerShell | Execution | 🔲 Planned |
+| T1059.001 PowerShell | Execution | ✅ Detected |
 | T1059.003 Windows Command Shell | Execution | 🔲 Planned |
 | T1547.001 Registry Run Keys | Persistence | 🔲 Planned |
 | T1053.005 Scheduled Task | Persistence | 🔲 Planned |
