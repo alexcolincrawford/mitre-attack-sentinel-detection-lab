@@ -16,6 +16,8 @@ This is depicted in the below diagram.
 
 ## Detection coverage
 
+ATT&CK Navigator coverage layer; added as detections are completed
+
 ## Detections
 
 | Technique | Tactic | Status |
@@ -33,5 +35,8 @@ This is depicted in the below diagram.
 
 ## Incident triage reports
 
+Multi-technique attack-chain triage scenarios; planned once additional detections are in place
 
 ## What I learned
+
+Key takeaways and lessons; added on project completion
