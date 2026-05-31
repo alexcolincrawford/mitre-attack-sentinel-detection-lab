@@ -1,0 +1,6 @@
+Event
+| where Source == "Microsoft-Windows-Sysmon" and EventID == 1
+| where EventData has "cmd.exe"
+| where EventData has_any (".bat", ".cmd", ".vbs", "%TEMP%")
+| project TimeGenerated, Computer, RenderedDescription
+| sort by TimeGenerated desc
