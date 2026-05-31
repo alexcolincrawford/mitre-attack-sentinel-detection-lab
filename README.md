@@ -25,7 +25,7 @@ ATT&CK Navigator coverage layer; added as detections are completed
 | [T1059.001 PowerShell](detections/T1059.001-powershell/writeup.md) | Execution | ✅ Detected |
 | [T1059.003 Windows Command Shell](detections/T1059.003%20Windows%20Command%20Shell/writeup.md) | Execution | ✅ Detected |
 | [T1547.001 Registry Run Keys](detections/T1547.001-registry-run-key-persistence/writeup.md) | Persistence | ✅ Detected |
-| [T1053.005 Scheduled Task](detections/T1053.005-scheduled-task/writeup.md) | Persistence | 🔲 Planned |
+| [T1053.005 Scheduled Task](detections/T1053.005-scheduled-task/writeup.md) | Persistence | ✅ Detected |
 | T1112 Modify Registry | Defense Evasion | 🔲 Planned |
 | T1218.011 Rundll32 | Defense Evasion | 🔲 Planned |
 | T1003.001 LSASS Memory | Credential Access | 🔲 Planned |
