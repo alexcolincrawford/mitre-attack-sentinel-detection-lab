@@ -94,7 +94,7 @@ The rule fires on benign script execution as well as malicious. Observed false p
 
 - **VMware Tools** running `resume-vm-default.bat` (parent: `vmtoolsd.exe`)
 
-![t1059.003-incident-VMWARE-FP](screenshots/t1059.003-001-incident-VMWARE-FP.png)
+![t1059.003-incident-VMWARE-FP](screenshots/t1059.003-001-incident-VMWARE-FP_correct.png)
 *Benign false positive: VMware Tools' `resume-vm-default.bat` executed via cmd.exe, running as NT AUTHORITY\SYSTEM, which distinguishes it from the interactive, user-context attack.*
 
 The discriminator observed in the data: legitimate activity ran as **NT AUTHORITY\SYSTEM in session 0**, while the emulated attack ran **interactively as LAB\Administrator in session 1**. In production this rule would be tuned by excluding known-good parent processes (`vmtoolsd.exe`) and deprioritising SYSTEM-context scheduled scripts.
