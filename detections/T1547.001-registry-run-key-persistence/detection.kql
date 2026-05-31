@@ -1,1 +1,6 @@
-
+Event
+| where Source == "Microsoft-Windows-Sysmon"
+| where EventID == 13
+| where EventData has @"\CurrentVersion\Run"
+| project TimeGenerated, Computer, RenderedDescription
+| sort by TimeGenerated desc
