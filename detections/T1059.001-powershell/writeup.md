@@ -62,6 +62,8 @@ Event
 | Incident creation | Enabled |
 | MITRE mapping | Execution / T1059.001 |
 
+Note: a longer lookback (see ![T1059.003](https://github.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/blob/main/detections/T1059.003%20Windows%20Command%20Shell/writeup.md)) better absorbs ingestion latency; revisited in later detections."
+
 ## Validation
 
 The analytics rule fired and raised a live incident in the Microsoft Defender portal (**"T1059.001 - Suspicious PowerShell Execution"**) correctly attributed to the host `CLIENT01.lab.local`, grouping 19 related events.
