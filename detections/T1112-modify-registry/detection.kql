@@ -1,0 +1,7 @@
+Event
+| where Source == "Microsoft-Windows-Sysmon"
+| where EventID == 13
+| where EventData has_any ("UseLogonCredential", "LocalAccountTokenFilterPolicy")
+| where EventData contains "DWORD (0x00000001)"
+| project TimeGenerated, Computer, RenderedDescription
+| sort by TimeGenerated desc
