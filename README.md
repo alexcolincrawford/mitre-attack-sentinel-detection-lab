@@ -16,7 +16,7 @@ This is depicted in the below diagram.
 
 ## Detection coverage
 
-Detection coverage mapped to MITRE ATT&CK Navigator, showing techniques emulated with Atomic Red Team and detected via custom KQL analytics rules in Microsoft Sentinel.
+Detection coverage shown via the MITRE ATT&CK Navigator, showing techniques emulated with Atomic Red Team and detected via custom KQL analytics rules in Microsoft Sentinel.
 
 <img width="2500" height="1000" alt="image" src="https://github.com/user-attachments/assets/d7528806-01ff-4dcc-91e8-3edc636f087f" />
 
