@@ -22,9 +22,9 @@ Detection coverage shown via the MITRE ATT&CK Navigator, showing techniques emul
 
 [_Click Here To Open interactive ATT&CK coverage map_](https://mitre-attack.github.io/attack-navigator/#layerURL=https://raw.githubusercontent.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/main/mitre-att%26ck-coverage/layer.json)
 
-**Detected (4):** T1059.001 PowerShell · T1059.003 Windows Command Shell · T1547.001 Registry Run Keys · T1053.005 Scheduled Task
+**Detected (5):** T1059.001 PowerShell · T1059.003 Windows Command Shell · T1547.001 Registry Run Keys · T1053.005 Scheduled Task · T1112 Modify Registry
 
-**Planned (6):** T1112 Modify Registry · T1218.011 Rundll32 · T1003.001 LSASS Memory · T1558.003 Kerberoasting · T1087 Account Discovery · T1018 Remote System Discovery
+**Planned (5):** T1218.011 Rundll32 · T1003.001 LSASS Memory · T1558.003 Kerberoasting · T1087 Account Discovery · T1018 Remote System Discovery
 
 ## Detections
 
@@ -34,7 +34,7 @@ Detection coverage shown via the MITRE ATT&CK Navigator, showing techniques emul
 | [T1059.003 Windows Command Shell](detections/T1059.003-windows-command-shell/writeup.md) | Execution | ✅ Detected |
 | [T1547.001 Registry Run Keys](detections/T1547.001-registry-run-key-persistence/writeup.md) | Persistence, Privilege Escalation | ✅ Detected |
 | [T1053.005 Scheduled Task](detections/T1053.005-scheduled-task/writeup.md) | Execution, Persistence, Privilege Escalation | ✅ Detected |
-| T1112 Modify Registry | Defense Impairment, Persistence | 🔲 Planned |
+| [T1112 Modify Registry](detections/T1112-modify-registry/writeup.md) | Defense Impairment, Persistence | ✅ Detected  |
 | T1218.011 Rundll32 | Stealth | 🔲 Planned |
 | T1003.001 LSASS Memory | Credential Access | 🔲 Planned |
 | T1558.003 Kerberoasting | Credential Access | 🔲 Planned |
