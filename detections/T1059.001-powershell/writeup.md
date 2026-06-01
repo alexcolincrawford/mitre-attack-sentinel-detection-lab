@@ -42,7 +42,8 @@ Event
 | where Source == "Microsoft-Windows-Sysmon"
 | where EventID == 1
 | where EventData has "powershell"
-| where EventData has_any ("-enc", "-EncodedCommand", "FromBase64String", "DownloadString", "IEX", "-nop", "-NoProfile")
+| where EventData has_any ("-enc", "-EncodedCommand", "FromBase64String",
+                           "DownloadString", "IEX", "hidden", "-nop", "-NoProfile")
 | project TimeGenerated, Computer, RenderedDescription
 | sort by TimeGenerated desc
 ```
