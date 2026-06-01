@@ -70,6 +70,9 @@ Suppression is enabled, carrying forward the tuning lesson from the T1547.001 de
 
 The rule fired and raised a single incident attributed to `CLIENT01.lab.local`, grouping task creation across all three methods.
 
+
+![T1053.005 Scheduled Task Creation incident raised on CLIENT01, alongside the other lab detections](https://github.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/raw/main/detections/T1053.005-scheduled-task/screenshots/incidentforscheduledtaskcreation.png)
+
 Notable captured activity:
 
 - **`schtasks.exe /create`**: Creates a scheduled task from the command line, configured to run at logon, startup, or a specific time.
@@ -79,7 +82,10 @@ Notable captured activity:
 - **PowerShell creation**: Tasks created via PowerShell cmdlets such as `New-ScheduledTaskAction` and `Register-ScheduledTask` instead of `schtasks.exe`.
 - **WMI/CIM creation**: Tasks created through WMI/CIM methods, typically by registering an XML task definition using `Invoke-CimMethod`.
 
-The PowerShell and WMI/CIM entries are the key result because they demonstrate coverage beyond the traditional `schtasks.exe` utility. This validates that the detection remains effective when tasks are registered through alternate Windows management interfaces.
+Captured Sysmon EID 1 record showing scheduled task creation via PowerShell and WMI/CIM RegisterByXml, demonstrating coverage beyond schtasks.exe.
+
+![WMI/CIM entries](https://github.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/blob/main/detections/T1053.005-scheduled-task/screenshots/t1053.005-registerbyxml-record.png)
+
 
 ## False-positive considerations
 
