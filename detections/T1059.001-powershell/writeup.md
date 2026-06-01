@@ -67,7 +67,11 @@ This rule was initially configured with a 5-minute lookback, which caused missed
 
 The analytics rule fired and raised a live incident in the Microsoft Defender portal, correctly attributed to `CLIENT01.lab.local` and grouped into 19 related events.
 
-Inspecting the captured event showed a download-and-execute cradle for **Mimikatz**, downloaded and executed in memory with `-DumpCreds`.
+[![Incident raised in the Defender portal, attributed to CLIENT01](https://github.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/blob/main/detections/T1059.001-powershell/screenshots/19alerts-T1059.001-powershell.png)
+
+Inspecting one of the captured event showed a download-and-execute cradle for **Mimikatz**, downloaded and executed in memory with `-DumpCreds`.
+
+[![Captured process command line showing the Invoke-Mimikatz download cradle](https://github.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/raw/main/detections/T1059.001-powershell/screenshots/incident-command.png)](/alexcolincrawford/mitre-attack-sentinel-detection-lab/blob/main/detections/T1059.001-powershell/screenshots/incident-command.png)
 
 The captured command line was:
 
