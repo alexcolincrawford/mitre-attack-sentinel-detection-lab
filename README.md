@@ -28,14 +28,16 @@ Detection coverage shown via the MITRE ATT&CK Navigator, showing techniques emul
 
 ## Detections
 
+## Detections
+
 | Technique | Tactic | Status |
-|-----------|--------|--------|
+|---|---|---|
 | [T1059.001 PowerShell](detections/T1059.001-powershell/writeup.md) | Execution | ✅ Detected |
-| [T1059.003 Windows Command Shell](detections/T1059.003%20Windows%20Command%20Shell/writeup.md) | Execution | ✅ Detected |
-| [T1547.001 Registry Run Keys](detections/T1547.001-registry-run-key-persistence/writeup.md) | Persistence | ✅ Detected |
-| [T1053.005 Scheduled Task](detections/T1053.005-scheduled-task/writeup.md) | Persistence | ✅ Detected |
-| T1112 Modify Registry | Defense Evasion | 🔲 Planned |
-| T1218.011 Rundll32 | Defense Evasion | 🔲 Planned |
+| [T1059.003 Windows Command Shell](detections/T1059.003-windows-command-shell/writeup.md) | Execution | ✅ Detected |
+| [T1547.001 Registry Run Keys](detections/T1547.001-registry-run-key-persistence/writeup.md) | Persistence, Privilege Escalation | ✅ Detected |
+| [T1053.005 Scheduled Task](detections/T1053.005-scheduled-task/writeup.md) | Execution, Persistence, Privilege Escalation | ✅ Detected |
+| T1112 Modify Registry | Defense Impairment, Persistence | 🔲 Planned |
+| T1218.011 Rundll32 | Stealth | 🔲 Planned |
 | T1003.001 LSASS Memory | Credential Access | 🔲 Planned |
 | T1558.003 Kerberoasting | Credential Access | 🔲 Planned |
 | T1087 Account Discovery | Discovery | 🔲 Planned |
