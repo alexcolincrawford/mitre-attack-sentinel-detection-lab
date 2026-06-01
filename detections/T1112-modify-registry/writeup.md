@@ -87,9 +87,14 @@ The rule fired and raised a single incident attributed to `CLIENT01.lab.local`, 
 
 ![T1112 incident raised on CLIENT01](screenshots/T1112-incident-4alert.png)
 
-The captured inspect record confirms the detection end to end: `reg.exe`, run by `LAB\Administrator`, setting `HKLM\...\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy` to `DWORD (0x00000001)`. The companion `UseLogonCredential` writes appear in the same grouped incident.
+The captured inspect record confirms the detection end to end: `reg.exe`, run by `LAB\Administrator`, setting `HKLM\...\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy` to `DWORD (0x00000001)`.
 
 ![Record_Details](screenshots/localaccounttokenfilterpolicy.png)
+
+ The companion `UseLogonCredential` writes appear in the same grouped incident.
+
+![UseLogonCredential](screenshots/UseLogonCredential-Details-DWORD(0x00000001).png)
+
 
 ## False-positive considerations
 
