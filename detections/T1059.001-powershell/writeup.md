@@ -35,8 +35,8 @@ Invoke-AtomicTest T1059.001 -Cleanup
   Log Analytics `Event` table.
 - Sysmon configured with the SwiftOnSecurity baseline config.
 
-**Why Sysmon EID 1?** PowerShell abuse is observable through the process that runs. In this lab,
-`powershell.exe` launched with specific flags and payloads. EID 1 captures the full command
+**Why Sysmon EID 1?** PowerShell abuse is observable through the process that runs it. In this lab,
+`powershell.exe` us launched with specific flags and payloads. EID 1 captures the full command
 line of every process, which is what the detection will alert on. Without command-line logging,
 you can see that PowerShell ran but not the flags, encoded content, or download cradle that
 separate malicious use from legitimate administration. The native alternative, Security
@@ -113,7 +113,7 @@ benign activity in a real environment. It would be tuned by:
 - Weighting encoded commands (`-enc`, `FromBase64String`) and download cradles
   (`DownloadString`, `IEX`) more heavily than flags like `-nop` or `-NoProfile`, which
   appear routinely in automation scripts
-- Correlating with the parent process, PowerShell spawned by `cmd.exe`, `wscript.exe`,
+- Correlating with the parent process: PowerShell spawned by `cmd.exe`, `wscript.exe`,
   or `mshta.exe` is higher signal than PowerShell spawned by a known expected tool
 
 ## Detection lifecycle covered
