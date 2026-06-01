@@ -16,11 +16,11 @@ This is depicted in the below diagram.
 
 ## Detection coverage
 
+Detection coverage mapped to MITRE ATT&CK Navigator, showing techniques emulated with Atomic Red Team and detected via custom KQL analytics rules in Microsoft Sentinel.
 
+<img width="2500" height="1000" alt="image" src="https://github.com/user-attachments/assets/d7528806-01ff-4dcc-91e8-3edc636f087f" />
 
-![ATT&CK Coverage Map](mitre-att%26ck-coverage/SOC_Detection_Lab__MITRE_ATTCK_Coverage.svg)
-
-*[Click to open in ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https://raw.githubusercontent.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/main/mitre-att%26ck-coverage/layer.json)*
+[_Click Here To Open interactive ATT&CK coverage map_](https://mitre-attack.github.io/attack-navigator/#layerURL=https://raw.githubusercontent.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/main/mitre-att%26ck-coverage/layer.json)
 
 ## Detections
 
