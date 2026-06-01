@@ -22,6 +22,10 @@ Detection coverage mapped to MITRE ATT&CK Navigator, showing techniques emulated
 
 [_Click Here To Open interactive ATT&CK coverage map_](https://mitre-attack.github.io/attack-navigator/#layerURL=https://raw.githubusercontent.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/main/mitre-att%26ck-coverage/layer.json)
 
+**Detected (4):** T1059.001 PowerShell · T1059.003 Windows Command Shell · T1547.001 Registry Run Keys · T1053.005 Scheduled Task
+
+**Planned (6):** T1112 Modify Registry · T1218.011 Rundll32 · T1003.001 LSASS Memory · T1558.003 Kerberoasting · T1087 Account Discovery · T1018 Remote System Discovery
+
 ## Detections
 
 | Technique | Tactic | Status |
