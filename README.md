@@ -16,7 +16,11 @@ This is depicted in the below diagram.
 
 ## Detection coverage
 
-ATT&CK Navigator coverage layer; added as detections are completed
+
+
+![ATT&CK Coverage Map](mitre-att%26ck-coverage/SOC_Detection_Lab__MITRE_ATTCK_Coverage.svg)
+
+*[Click to open in ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https://raw.githubusercontent.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/main/mitre-att%26ck-coverage/layer.json)*
 
 ## Detections
 
