@@ -28,8 +28,6 @@ Detection coverage shown via the MITRE ATT&CK Navigator, showing techniques emul
 
 ## Detections
 
-## Detections
-
 | Technique | Tactic | Status |
 |---|---|---|
 | [T1059.001 PowerShell](detections/T1059.001-powershell/writeup.md) | Execution | ✅ Detected |
