@@ -50,7 +50,7 @@ Coverage is visualized in the MITRE ATT&CK Navigator layer, showing techniques e
 | [T1547.001 Registry Run Keys](detections/T1547.001-registry-run-key-persistence/writeup.md) | Persistence, Privilege Escalation | ✅ Detected |
 | [T1053.005 Scheduled Task](detections/T1053.005-scheduled-task/writeup.md) | Execution, Persistence, Privilege Escalation | ✅ Detected |
 | [T1112 Modify Registry](detections/T1112-modify-registry/writeup.md) | Defense Impairment, Persistence | ✅ Detected |
-| T1003.001 LSASS Memory | Credential Access | 🔲 Planned |
+| T1218.011 Rundll32 | Stealth | 🔲 Planned |
 | T1558.003 Kerberoasting | Credential Access | 🔲 Planned |
 | T1087 Account Discovery | Discovery | 🔲 Planned |
 | T1018 Remote System Discovery | Discovery | 🔲 Planned |
