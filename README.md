@@ -38,21 +38,8 @@ Coverage is visualized in the MITRE ATT&CK Navigator layer, showing techniques e
 
 [🧭 Open interactive ATT&CK coverage map](https://mitre-attack.github.io/attack-navigator/#layerURL=https://raw.githubusercontent.com/alexcolincrawford/mitre-attack-sentinel-detection-lab/main/mitre-att%26ck-coverage/layer.json)
 
-### Detected (5)
 
-- **T1059.001** — Command and Scripting Interpreter: PowerShell  
-- **T1059.003** — Command and Scripting Interpreter: Windows Command Shell  
-- **T1547.001** — Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder  
-- **T1053.005** — Scheduled Task/Job: Scheduled Task  
-- **T1112** — Modify Registry (credential-theft-enabling subset)
-
-### Planned (5)
-
-- **T1218.011** — Signed Binary Proxy Execution: Rundll32  
-- **T1003.001** — Credential Dumping: LSASS Memory  
-- **T1558.003** — Kerberoasting  
-- **T1087** — Account Discovery  
-- **T1018** — Remote System Discovery
+## Detections
 
 ## Detections
 
@@ -62,12 +49,12 @@ Coverage is visualized in the MITRE ATT&CK Navigator layer, showing techniques e
 | [T1059.003 Windows Command Shell](detections/T1059.003-windows-command-shell/writeup.md) | Execution | ✅ Detected |
 | [T1547.001 Registry Run Keys](detections/T1547.001-registry-run-key-persistence/writeup.md) | Persistence, Privilege Escalation | ✅ Detected |
 | [T1053.005 Scheduled Task](detections/T1053.005-scheduled-task/writeup.md) | Execution, Persistence, Privilege Escalation | ✅ Detected |
-| [T1112 Modify Registry](detections/T1112-modify-registry/writeup.md) | Defense Evasion, Persistence | ✅ Detected  |
-| T1218.011 Rundll32 | Stealth | 🔲 Planned |
+| [T1112 Modify Registry](detections/T1112-modify-registry/writeup.md) | Defense Impairment, Persistence | ✅ Detected |
 | T1003.001 LSASS Memory | Credential Access | 🔲 Planned |
 | T1558.003 Kerberoasting | Credential Access | 🔲 Planned |
 | T1087 Account Discovery | Discovery | 🔲 Planned |
 | T1018 Remote System Discovery | Discovery | 🔲 Planned |
+| T1021.001 Remote Desktop Protocol | Lateral Movement | 🔲 Planned |
 
 Each detection writeup covers:
 
