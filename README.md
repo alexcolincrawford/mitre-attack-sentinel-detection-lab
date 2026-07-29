@@ -66,10 +66,25 @@ Each detection writeup covers:
 - False-positive considerations  
 - Detection lifecycle
 
-## Incident triage reports
+## Incident Triage Reports
 
-Multi-technique attack-chain triage scenarios are planned once additional detections are in place. These will show how to correlate related alerts into a coherent incident narrative.
+Full triage write-ups following a six-stage incident response lifecycle, based on NIST SP 800-61 (Detect → Analyse → Contain → Eradicate → Recover → Lessons Learned):
+
+- [Incident 1 — Suspicious PowerShell Execution (Mimikatz Download Cradle)](incident-triage-reports/incident-1-suspicious-powershell-execution.md) — T1059.001
+
+_Further incident triage reports  will be added._
 
 ## What I learned
 
-Key takeaways and lessons learned will be added as the project progresses and more detections are validated.
+Key takeaways so far, drawn from validating and triaging the detections in this lab:
+
+- **True/false positive calls need a distinguishing detail, not just broad pattern-matching** — distinguishing malicious activity from legitimate admin/automation behaviour (e.g. session context, account privilege, command flags) rather than assuming intent from the alert alone. **If I could take anything away from this project, it would be importance of understanding the context from parent/child processes in addition to the pattern that has been matched.** This aspect was something that I did not consider when creating my KQL alerts, causing false positives to fire.
+
+- **Alert Enrichment** - The Query/Alerts should also consider enriching the data available to the analyst, such as parent process, session context, account privilege. This would help quickly understand what is actually going on in an alert.
+
+- **Detection tuning matters as much as writing the rule** — my first detection's 5-minute lookback matched its 5-minute run frequency, risking missed events in ingestion-latency gaps. I extended the lookback and added suppression, which fixed this and prevented duplicate incidents on later rules. The suppression would also assist with alert fatigue.
+  
+- **Containment should be as narrow as possible while still closing the exposure** — e.g. blocking a specific malicious URL/IOC rather than an entire legitimate domain it happened to be hosted on.
+
+_Further takeaways will be added as more incident triage reports are written-up.
+_
